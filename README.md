@@ -4,6 +4,11 @@ Uncovering Class Hierarchies in C++ Programs
 This repository holds the programs used for the NDSS 2017 paper [MARX: Uncovering Class Hierarchies in C++ Programs](https://www.syssec.rub.de/research/publications/marx/).
 
 
+## Evaluation Data
+
+The data used to evaluate Marx is available at [zenodo.org](https://zenodo.org/record/238686).
+
+
 ## Organization
 
 Folder structure as follows:
@@ -11,7 +16,6 @@ Folder structure as follows:
 - `src` contains the source code itself,
 - `patch` contains a patch to enable manual memory management for VEX,
 - `ida_export` contains an IDA script creating a `.dmp` file,
-- `tests` contains sources and binaries of the evaluation,
 - `scripts` contains helper scripts.
 
 
@@ -89,6 +93,8 @@ When the config file is created, Marx can be executed by issuing the following c
 ```
 ./marx ../tests/filezilla/config.cfg
 ```
+
+Afterwards, the IDAPython script found in `ida_import` can be used to import the analyzed data back to IDA.
 
 NOTE: Windows binaries have to be loaded at base address 0x0 (or rebased)
 in IDA before exporting them. Also, the IDAPython script only supports Windows
